@@ -4,7 +4,6 @@ use schema::todos;
 pub struct Todo {
     pub id: i32,
     pub title: String,
-    pub body: Option<String>,
     pub status: bool,
 }
 
@@ -12,6 +11,5 @@ pub struct Todo {
 #[table_name = "todos"]
 pub struct NewTodo {
     pub title: String, // ここでコピーが走るのがちょっとアホらしい
-    pub body: Option<String>,
     pub status: bool,
 }

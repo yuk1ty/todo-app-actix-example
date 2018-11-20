@@ -5,9 +5,8 @@ use actix_web::HttpResponse;
 use api::context::AppState;
 use futures::future;
 
-pub mod all_todos;
 pub mod context;
-pub mod insert_todo;
+pub mod todo;
 
 pub fn hc(_: HttpRequest<AppState>) -> FutureResponse<HttpResponse> {
     future::ok(HttpResponse::Ok().body("OK")).responder()

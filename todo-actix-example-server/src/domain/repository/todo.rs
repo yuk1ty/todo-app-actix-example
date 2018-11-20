@@ -30,7 +30,6 @@ impl Handler<FindAllTasks> for MySqlCli {
 
 pub struct CreateNewTask {
     pub title: String,
-    pub body: Option<String>,
 }
 
 impl Message for CreateNewTask {
@@ -43,7 +42,6 @@ impl Handler<CreateNewTask> for MySqlCli {
     fn handle(&mut self, todo: CreateNewTask, _: &mut Self::Context) -> Self::Result {
         let new_todo = NewTodo {
             title: todo.title,
-            body: todo.body,
             status: false,
         };
 
